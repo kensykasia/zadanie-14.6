@@ -1,57 +1,59 @@
 var Counter = React.createClass({
-    getInitialState: function () {
+    getInitialState: function() {
         return {
             counter: 0
         };
     },
 
-    increment: function () {
+    increment: function() {
         this.setState({
             counter: this.state.counter + 1
         });
     },
 
-    decrement: function () {
+    decrement: function() {
         this.setState({
             counter: this.state.counter - 1
         });
     },
 
-    getDefaultProps: function () {
+    getDefaultProps: function() {
         console.log('Domyślne ustawienia wartości propsów');
     },
 
-    componentWillMount: function () {
+    componentWillMount: function() {
         console.log('Komponent przed renderowaniem (ustawienie stanu w tej metodzie nie spowoduje przerenderowania)');
     },
 
-    componentDidMount: function () {
+    componentDidMount: function() {
         console.log('Komponent po renderowaniu, możemy wykonywać na nim różne operacje manipulacji, używać jQuery albo też pobrać dane');
     },
 
-    componentWillReceiveProps: function () {
+    componentWillReceiveProps: function() {
         console.log('Aktualizacja stanu na podstawie nadchodzących właściwości');
     },
 
-    shouldComponentUpdate: function () {
+    shouldComponentUpdate: function() {
         console.log('Sprawdza przed renderowaniem czy przerysowanie jest konieczne(dobra metoda do optymalizacji aplikacji)');
         return true;
     },
 
-    componentWillUpdate: function () {
+    componentWillUpdate: function() {
         console.log('Przygotowanie na przerenderowanie');
     },
 
-    componentDIdUpdate: function () {
+    componentDIdUpdate: function() {
         console.log('Manipulacje DOM po przerysowaniu komponentu');
     },
 
-    componentWillUnmount: function () {
+    componentWillUnmount: function() {
         console.log('Posprzątanie przed usunięciem komponentu, możemy wykonywać wszystkie rzeczy związane z odpinaniem timerów czy nasłuchiwania zdarzeń na elementach DOM');
     },
 
-    render: function () {
-        return React.createElement('div', { className: 'container' },
+    render: function() {
+        return React.createElement('div', {
+                className: 'container'
+            },
             React.createElement('button', {
                 className: 'button',
                 onClick: this.decrement
